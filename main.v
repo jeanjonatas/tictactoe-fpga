@@ -3,10 +3,11 @@
 
 module main;
 
-wire posicaoX, posicaoY, vencedor;
+wire [0:8] posicaoX, posicaoY;
+wire vencedor;
 reg clock, reset;
 
-testbench testbench(.posicaoX(posicaoX), .posicaoY(posicaoY));
+testbench testbench(.posicaoX(posicaoX));
 game game(.posicaoX(posicaoX), .posicaoY(posicaoY), .clock(clock), .reset(reset), .vencedor(vencedor));
 
 initial begin
@@ -17,7 +18,7 @@ initial begin
     reset = 0;
     clock = 0;
     reset = 1;
-    #5
+    #10
     #150 $finish;
 end
     always

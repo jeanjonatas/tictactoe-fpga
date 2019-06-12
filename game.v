@@ -1,9 +1,10 @@
 module game(posicaoX, posicaoY, clock, reset, vencedor);
-input posicaoX, posicaoY, clock, reset;
+input [0:8]posicaoX, posicaoY;
+input clock, reset;
 output reg vencedor;
 
 reg[1:0] estadoAtual;
-reg [1:0] matrizJogo [0:2][0:2];
+reg [1:0] matrizJogo [0:8];
 
 parameter Player = 0, CPU = 1;
 
@@ -11,31 +12,29 @@ parameter Player = 0, CPU = 1;
 initial begin
 vencedor = 2;
 estadoAtual = Player;
-for (i=0; i<3; i=i+1) begin
-                for (j=0; j<3; j=j+1) begin
-                    matrizJogo[i][j] = 2;
+for (i=0; i<9; i=i+1) begin
+                    matrizJogo[i] = 2;
                     $display("Posicao");
                     $display(i);
-                    $display(j);
-                    $display(matrizJogo[i][j]);
-                end 
+                    $display(matrizJogo[i]);
             end 
 
 
 
 end
-integer i, j;
+integer i, count;
 always @(posedge clock, negedge reset) begin
     if(~reset)
         estadoAtual <= Player;  
     else
         case(estadoAtual)
         Player: begin 
-                matrizJogo[posicaoX][posicaoY] = Player;
+                matrizJogo[posicaoX] = Player;
                 estadoAtual <= CPU;
                end
         CPU: begin 
-                  matrizJogo[posicaoX][posicaoY] = CPU;
+                   matrizJogo[posicaoX] = CPU;
+                   matrizJogo[posicaoY] = CPU;
                    estadoAtual <= Player;
              end
         endcase
@@ -44,9 +43,27 @@ always @(posedge clock, negedge reset) begin
           $display(posicaoX);
           $display(posicaoY);
           $display("Estados");
-          $display(matrizJogo[posicaoX][0]);
-          $display(matrizJogo[posicaoX][1]);
-          $display(matrizJogo[posicaoX][2]);
+          $display(matrizJogo[posicaoX]);
+          $display(matrizJogo[posicaoX]);
+          $display(matrizJogo[posicaoX]);
+          
+          
+           for (i=0; i<9; i=i+1) begin
+            if(i%2 == 0 && matrizJogo[i] == estadoAtual)begin
+                count = count + 1;
+                 $display("Entrou");
+            end
+           
+           
+           end
+           
+           if(count == 3)
+             $display("Ganhou na diagonal");
+             
+             
+            count = 0;
+        
+        /*
         if(matrizJogo[posicaoX][0] == estadoAtual         // 3-in-the-row
                    && matrizJogo[posicaoX][1] == estadoAtual
                    && matrizJogo[posicaoX][2] == estadoAtual
@@ -77,7 +94,7 @@ always @(posedge clock, negedge reset) begin
                 end 
             end 
         end 
-        j = 0;
+        */
         i = 0;
 end
 
