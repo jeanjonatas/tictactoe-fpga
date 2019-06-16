@@ -3,12 +3,12 @@
 
 module main;
 
-wire [0:8] posicaoX, posicaoY;
-wire vencedor;
+wire [0:8] posicao;
+wire [0:2]vencedor;
 reg clock, reset;
 
-testbench testbench(.posicaoX(posicaoX));
-game game(.posicaoX(posicaoX), .posicaoY(posicaoY), .clock(clock), .reset(reset), .vencedor(vencedor));
+testbench testbench(.posicao(posicao));
+game game(.posicao(posicao), .clock(clock), .reset(reset), .vencedor(vencedor));
 
 initial begin
     $dumpfile("game.vcd"); //Saídas do jogo

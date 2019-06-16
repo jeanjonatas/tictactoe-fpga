@@ -1,19 +1,67 @@
-module testbench(posicaoX);
-    output reg[0:8] posicaoX;
+module testbench(posicao);
+    output reg[0:8] posicao;
 initial begin
 
-
-
-posicaoX=0;
+//Jogo deu velha
+posicao=0;
 #10;
-posicaoX=1;
+posicao=1;
 #20;
-posicaoX=4;
+posicao=2;
 #20;
-posicaoX=2;
+posicao=3;
 #20;
-posicaoX=8;
+posicao=5;
 #20;
-posicaoX=7;
+posicao=4;
+#20;
+posicao=6;
+#20;
+posicao=8;
+#20;
+posicao=7;
+
+/*Test ganhando por coluna
+posicao=0;
+#10;
+posicao=2;
+#20;
+posicao=3;
+#20;
+posicao=4;
+#20;
+posicao=6;
+#20;
+posicao=7;
+#20;
+
+/*Test ganhando na linha
+posicao=0;
+#10;
+posicao=3;
+#20;
+posicao=1;
+#20;
+posicao=4;
+#20;
+posicao=2;
+#20;
+posicao=7;
+#20;
+/*Test ganhando na diagonal principal
+posicao=0;
+#20;
+posicao=1;
+#20;
+posicao=4;
+#20;
+posicao=2;
+#20;
+posicao=8;
+#20;
+posicao=7;
+*/
+
+
 end
 endmodule
