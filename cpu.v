@@ -43,7 +43,7 @@ module cpu(matriz , clock, difficulty, coordenadas);
 		end
 	endfunction
 	
-
+//definição das coordenadas de joagada de acordo com a dificuldade 
 	always @(*)begin
 		case (modo)
 			facil:begin
