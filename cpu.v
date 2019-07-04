@@ -1,10 +1,10 @@
 module cpu(matriz , clock, difficulty, coordenadas);
 
-	input modo, [1:0] matriz [0:8];
+	input modo, matriz;
 	output coordenadas;
-	reg[1:0] modo;
+	reg[1:0] modo,  matriz [0:8];
 	parameter facil=0, medio=1, dificil=2;
-
+	
 	//funções que definem as jogadas de acordo com a dificuldade
 	function modo_facil;
 		input matriz;
