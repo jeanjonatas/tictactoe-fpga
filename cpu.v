@@ -4,33 +4,34 @@ module cpu(matriz , clock, difficulty, coordenadas);
 	output coordenadas;
 	reg[1:0] modo,  matriz [0:8];
 	parameter facil=0, medio=1, dificil=2;
-	
+	integer i =0;
 	//funções que definem as jogadas de acordo com a dificuldade
 	function modo_facil;
-		input matriz;
-		begin
-		reg cont;
-		for (i=0; i<9; i=i+1)begin
-			if(matriz[i] == 2)begin
-				modo_facil = i;
-				break;
-			end
-				
-		end		
+		input matriz_l;
+		begin		
+			for (i=0; i<9; i=i+1)begin
+				if(matriz_l[i] == 2)begin
+					modo_facil = i;
+					break;
+					end
+			end				
 		end
 	endfunction
 	
 	function modo_medio;
-		input matriz;
+		input matriz_l;
+		reg [1:0] temp [0:8];
+		integer cont;
 		begin
-		reg [1:0] temp [0:8], cont;
-		for (i=0; i<9; i=i+1)begin
-			if(matriz[i] == 2)begin
-				temp[cont] = i;
-				cont = cont+1;
+			cont=0;
+			for (i=0; i<9; i=i+1)begin
+				if(matriz_l[i] == 2)begin
+					temp[cont] = i;
+					cont = cont+1;
+				end
 			end
 
-		modo_medio= ;
+			modo_medio= ;
 		end
 	endfunction
 	
@@ -41,7 +42,8 @@ module cpu(matriz , clock, difficulty, coordenadas);
 
 		modo_dificil= ;
 		end
-	endfunction
+	endfunction 
+	//test
 	
 //definição das coordenadas de joagada de acordo com a dificuldade 
 	always @(*)begin
@@ -54,7 +56,8 @@ module cpu(matriz , clock, difficulty, coordenadas);
 			end
 			dificil:begin
 				coordenadas = modo_dificil(matriz);
-			end		
+			end
+		endcase
 	end
 
 //verificação de qual a dificuldade
@@ -66,7 +69,7 @@ module cpu(matriz , clock, difficulty, coordenadas);
 		end
 		else
 			modo<=dificil;			
-		end
+		
 	end
 	
 endmodule
