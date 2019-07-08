@@ -1,10 +1,12 @@
-module cpu(matriz , clock, difficulty, coordenadas);
+module tictactoe(matriz , clock, difficulty, coordenadas, reset);
 
-	input modo, matriz;
-	output coordenadas;
-	reg[1:0] modo,  matriz [0:8];
+	input [1:0]matriz[0:8], clock, difficulty, reset;
+	output reg [3:0]coordenadas;
+	reg [1:0] modo;
 	parameter facil=0, medio=1, dificil=2;
 	integer i =0;
+	
+	
 	//funções que definem as jogadas de acordo com a dificuldade
 	function modo_facil;
 		input matriz_l;
@@ -58,7 +60,7 @@ module cpu(matriz , clock, difficulty, coordenadas);
 		begin
 		
 
-		modo_dificil= ;
+		modo_dificil= 0;
 		end
 	endfunction 
 	
@@ -78,7 +80,7 @@ module cpu(matriz , clock, difficulty, coordenadas);
 	end
 
 //verificação de qual a dificuldade
-	always @(posedge clock, negedge reset_n)begin
+	always @(posedge clock, negedge reset)begin
 		if(difficulty == facil)
 			modo<=facil;			
 		else if(difficulty == medio)begin
@@ -90,4 +92,3 @@ module cpu(matriz , clock, difficulty, coordenadas);
 	end
 	
 endmodule
-  
