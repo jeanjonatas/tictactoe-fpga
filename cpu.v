@@ -1,4 +1,4 @@
-module tictactoe(matriz , clock, difficulty, coordenadas, reset);
+module cpu(matriz , clock, difficulty, coordenadas, reset);
 
 	input [1:0]matriz[0:8], clock, difficulty, reset;
 	output reg [3:0]coordenadas;
