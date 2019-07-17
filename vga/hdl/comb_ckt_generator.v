@@ -63,10 +63,9 @@ reg [1:0] matrizJogo [0:8];
 parameter Player = 1, CPU = 2;
 integer count = 1;
 
-
-
-
-
+//Variaveis para cpu
+reg [1:0] modo, difficulty;
+parameter facil=0, medio=1, dificil=2;
 
 
 
@@ -112,6 +111,12 @@ assign HEX5 = ~{SW[9], SW[8], SW[7], SW[6], SW[5], SW[4], SW[3], SW[2]};
 integer increment = 6;
 integer positionLine = 157;
 integer positionColumn = 197;
+integer controle = 1;
+integer i;
+
+initial begin
+difficulty = 0;
+end
 
 
 always @(posedge clock) begin
@@ -161,6 +166,15 @@ always @(posedge clock) begin
                end
         CPU: begin 
                 begin
+						if(difficulty == facil) begin
+							for (i=0; i<9; i=i+1)begin
+								if(matrizJogo[i] == 0 && controle)begin
+									posicao = i;
+									controle = 0;
+								 end
+							end
+							controle = 1;
+						end
                    matrizJogo[posicao] = CPU;
                    estadoAtual <= Player;
                 end
@@ -368,7 +382,86 @@ always @(posedge clock) begin
 	//red <= (((row>400) && (col>100))&&((row<(500)) && (col<(200)))) ? 4'hf : 4'h0;	
 
 
+	
+	
+	
 end
+/*
+function modo_facil;
+	integer i=0, controle = 1;
+	
+		input  matriz_l;
+		begin		
+			/*
+			for (i=0; i<9; i=i+1)begin
+				if(matriz_l[i] == 0 && controle)begin
+					modo_facil = i;
+					controle = 0;
+					end
+			end
+		modo_facil = 2;
+		end
+	endfunction
+	
+	function modo_medio;
+		input [9:0] matriz_l;
+		integer i=0;
+		reg [1:0] temp [0:8], temp2 [0:8];
+		integer cont, cont2;
+		begin
+			cont=0;
+			cont2=0;
+			for (i=0; i<9; i=i+1)begin
+				if(matriz_l[i] == 2)begin
+					temp[cont] = i;
+					cont = cont+1;
+					if(matriz_l[i+1] == 1)begin
+						modo_medio= i;
+						break;
+					end
+					else if(i>0 && matriz_l[i-1] == 1)begin
+						modo_medio= i;
+						break;
+					end
+					else if(i>2 && matriz_l[i-3] == 1)begin
+						modo_medio= i;
+						break;
+					end
+					else if(matriz_l[i+3] == 1)begin
+						modo_medio= i;
+						break;
+					end
+					else
+						modo_medio= i;					
+						
+				end				
+			end
+		end
+	endfunction
+	
+	function modo_dificil;
+		input matriz;
+		begin
+		
+
+		modo_dificil= 0;
+		end
+	endfunction 
+	
+//definição das coordenadas de joagada de acordo com a dificuldade 
+	always @(*)begin
+		case (modo)
+			facil:begin
+				posicao = modo_facil(matrizJogo);
+			end
+			medio:begin
+				posicao = modo_medio(matrizJogo);
+			end
+			dificil:begin
+				posicao = modo_dificil(matrizJogo);
+			end
+		endcase
+	end*/
 
 
 endmodule

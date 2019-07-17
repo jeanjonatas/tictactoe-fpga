@@ -1,2 +1,2 @@
-Warning (10268): Verilog HDL information at comb_ckt_generator.v(117): always construct contains both blocking and non-blocking assignments File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 117
+Warning (10268): Verilog HDL information at comb_ckt_generator.v(122): always construct contains both blocking and non-blocking assignments File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 122
 Warning (10268): Verilog HDL information at game.v(50): always construct contains both blocking and non-blocking assignments File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/game.v Line: 50

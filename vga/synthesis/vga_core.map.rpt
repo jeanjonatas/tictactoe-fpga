@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vga_core
-Tue Jul 16 23:38:56 2019
+Wed Jul 17 14:09:54 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -15,18 +15,17 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis IP Cores Summary
   9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: comb_ckt_generator:comb_ckt
- 14. Parameter Settings for User Entity Instance: pll:vgapll_inst|altpll:altpll_component
- 15. Parameter Settings for User Entity Instance: vga_controller:control
- 16. altpll Parameter Settings by Entity Instance
- 17. Port Connectivity Checks: "vga_controller:control"
- 18. Post-Synthesis Netlist Statistics for Top Partition
- 19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
- 21. Analysis & Synthesis Suppressed Messages
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: comb_ckt_generator:comb_ckt
+ 13. Parameter Settings for User Entity Instance: pll:vgapll_inst|altpll:altpll_component
+ 14. Parameter Settings for User Entity Instance: vga_controller:control
+ 15. altpll Parameter Settings by Entity Instance
+ 16. Port Connectivity Checks: "vga_controller:control"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+ 20. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -52,7 +51,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jul 16 23:38:56 2019       ;
+; Analysis & Synthesis Status        ; Successful - Wed Jul 17 14:09:54 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; vga_core                                    ;
 ; Top-level Entity Name              ; top                                         ;
@@ -264,50 +263,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HEX0[5]~reg0                                 ; Stuck at VCC due to stuck port data_in                 ;
 ; HEX0[6]~reg0                                 ; Stuck at VCC due to stuck port data_in                 ;
 ; HEX0[7]~reg0                                 ; Stuck at GND due to stuck port data_in                 ;
+; comb_ckt_generator:comb_ckt|controle[0]      ; Stuck at VCC due to stuck port data_in                 ;
+; comb_ckt_generator:comb_ckt|controle[1..31]  ; Stuck at GND due to stuck port data_in                 ;
 ; comb_ckt_generator:comb_ckt|red[1..3]        ; Merged with comb_ckt_generator:comb_ckt|red[0]         ;
 ; comb_ckt_generator:comb_ckt|green[1..3]      ; Merged with comb_ckt_generator:comb_ckt|green[0]       ;
 ; comb_ckt_generator:comb_ckt|blue[1..3]       ; Merged with comb_ckt_generator:comb_ckt|blue[0]        ;
 ; comb_ckt_generator:comb_ckt|posicao[5..9]    ; Merged with comb_ckt_generator:comb_ckt|posicao[4]     ;
-; comb_ckt_generator:comb_ckt|posicao[4]       ; Stuck at GND due to stuck port data_in                 ;
 ; comb_ckt_generator:comb_ckt|estadoAtual[1]   ; Merged with comb_ckt_generator:comb_ckt|estadoAtual[0] ;
-; comb_ckt_generator:comb_ckt|matrizJogo[0][1] ; Stuck at GND due to stuck port data_in                 ;
-; comb_ckt_generator:comb_ckt|estadoAtual[0]   ; Stuck at GND due to stuck port data_in                 ;
-; comb_ckt_generator:comb_ckt|posicao[0..3]    ; Stuck at GND due to stuck port data_in                 ;
-; comb_ckt_generator:comb_ckt|matrizJogo[0][0] ; Stuck at GND due to stuck port data_in                 ;
-; comb_ckt_generator:comb_ckt|matrizJogo[1][1] ; Stuck at GND due to stuck port data_in                 ;
-; comb_ckt_generator:comb_ckt|matrizJogo[1][0] ; Stuck at GND due to stuck port data_in                 ;
-; comb_ckt_generator:comb_ckt|matrizJogo[2][1] ; Stuck at GND due to stuck port data_in                 ;
-; comb_ckt_generator:comb_ckt|matrizJogo[2][0] ; Stuck at GND due to stuck port data_in                 ;
-; comb_ckt_generator:comb_ckt|matrizJogo[3][1] ; Stuck at GND due to stuck port data_in                 ;
-; comb_ckt_generator:comb_ckt|matrizJogo[3][0] ; Stuck at GND due to stuck port data_in                 ;
-; comb_ckt_generator:comb_ckt|matrizJogo[4][1] ; Stuck at GND due to stuck port data_in                 ;
-; comb_ckt_generator:comb_ckt|matrizJogo[4][0] ; Stuck at GND due to stuck port data_in                 ;
-; comb_ckt_generator:comb_ckt|matrizJogo[5][1] ; Stuck at GND due to stuck port data_in                 ;
-; comb_ckt_generator:comb_ckt|matrizJogo[5][0] ; Stuck at GND due to stuck port data_in                 ;
-; comb_ckt_generator:comb_ckt|matrizJogo[6][1] ; Stuck at GND due to stuck port data_in                 ;
-; comb_ckt_generator:comb_ckt|matrizJogo[6][0] ; Stuck at GND due to stuck port data_in                 ;
-; comb_ckt_generator:comb_ckt|matrizJogo[7][0] ; Stuck at GND due to stuck port data_in                 ;
-; comb_ckt_generator:comb_ckt|matrizJogo[7][1] ; Stuck at GND due to stuck port data_in                 ;
 ; comb_ckt_generator:comb_ckt|matrizJogo[8][0] ; Stuck at GND due to stuck port data_in                 ;
 ; comb_ckt_generator:comb_ckt|matrizJogo[8][1] ; Stuck at GND due to stuck port data_in                 ;
-; Total Number of Removed Registers = 47       ;                                                        ;
+; comb_ckt_generator:comb_ckt|matrizJogo[7][0] ; Stuck at GND due to stuck port data_in                 ;
+; comb_ckt_generator:comb_ckt|matrizJogo[7][1] ; Stuck at GND due to stuck port data_in                 ;
+; comb_ckt_generator:comb_ckt|matrizJogo[6][0] ; Stuck at GND due to stuck port data_in                 ;
+; comb_ckt_generator:comb_ckt|matrizJogo[6][1] ; Stuck at GND due to stuck port data_in                 ;
+; comb_ckt_generator:comb_ckt|matrizJogo[5][0] ; Stuck at GND due to stuck port data_in                 ;
+; comb_ckt_generator:comb_ckt|matrizJogo[5][1] ; Stuck at GND due to stuck port data_in                 ;
+; comb_ckt_generator:comb_ckt|matrizJogo[4][0] ; Stuck at GND due to stuck port data_in                 ;
+; comb_ckt_generator:comb_ckt|matrizJogo[4][1] ; Stuck at GND due to stuck port data_in                 ;
+; comb_ckt_generator:comb_ckt|matrizJogo[3][0] ; Stuck at GND due to stuck port data_in                 ;
+; comb_ckt_generator:comb_ckt|matrizJogo[3][1] ; Stuck at GND due to stuck port data_in                 ;
+; comb_ckt_generator:comb_ckt|matrizJogo[2][0] ; Stuck at GND due to stuck port data_in                 ;
+; comb_ckt_generator:comb_ckt|matrizJogo[2][1] ; Stuck at GND due to stuck port data_in                 ;
+; comb_ckt_generator:comb_ckt|matrizJogo[1][0] ; Stuck at GND due to stuck port data_in                 ;
+; comb_ckt_generator:comb_ckt|matrizJogo[1][1] ; Stuck at GND due to stuck port data_in                 ;
+; comb_ckt_generator:comb_ckt|matrizJogo[0][0] ; Stuck at GND due to stuck port data_in                 ;
+; comb_ckt_generator:comb_ckt|matrizJogo[0][1] ; Stuck at GND due to stuck port data_in                 ;
+; comb_ckt_generator:comb_ckt|posicao[3]       ; Stuck at GND due to stuck port data_in                 ;
+; comb_ckt_generator:comb_ckt|estadoAtual[0]   ; Stuck at GND due to stuck port data_in                 ;
+; comb_ckt_generator:comb_ckt|posicao[0..2,4]  ; Stuck at GND due to stuck port data_in                 ;
+; Total Number of Removed Registers = 79       ;                                                        ;
 +----------------------------------------------+--------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                        ;
-+----------------------------------------+---------------------------+-----------------------------------------------+
-; Register name                          ; Reason for Removal        ; Registers Removed due to This Register        ;
-+----------------------------------------+---------------------------+-----------------------------------------------+
-; comb_ckt_generator:comb_ckt|posicao[4] ; Stuck at GND              ; comb_ckt_generator:comb_ckt|matrizJogo[2][1], ;
-;                                        ; due to stuck port data_in ; comb_ckt_generator:comb_ckt|matrizJogo[2][0], ;
-;                                        ;                           ; comb_ckt_generator:comb_ckt|matrizJogo[3][1], ;
-;                                        ;                           ; comb_ckt_generator:comb_ckt|matrizJogo[3][0], ;
-;                                        ;                           ; comb_ckt_generator:comb_ckt|matrizJogo[4][1], ;
-;                                        ;                           ; comb_ckt_generator:comb_ckt|matrizJogo[5][0], ;
-;                                        ;                           ; comb_ckt_generator:comb_ckt|matrizJogo[7][0], ;
-;                                        ;                           ; comb_ckt_generator:comb_ckt|matrizJogo[8][0]  ;
-+----------------------------------------+---------------------------+-----------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -330,21 +315,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|vga_controller:control|column[1]       ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |top|vga_controller:control|row[3]          ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|vga_controller:control|h_count[4]      ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|vga_controller:control|v_count[2]      ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|vga_controller:control|column[6]       ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |top|vga_controller:control|row[4]          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|vga_controller:control|h_count[0]      ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|vga_controller:control|v_count[7]      ;
 ; 30:1               ; 2 bits    ; 40 LEs        ; 8 LEs                ; 32 LEs                 ; Yes        ; |top|comb_ckt_generator:comb_ckt|blue[0]    ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |top|comb_ckt_generator:comb_ckt|Selector16 ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |top|comb_ckt_generator:comb_ckt|Selector14 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |top|comb_ckt_generator:comb_ckt|Selector15 ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |top|comb_ckt_generator:comb_ckt|Selector13 ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |top|comb_ckt_generator:comb_ckt|Selector11 ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |top|comb_ckt_generator:comb_ckt|Selector9  ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |top|comb_ckt_generator:comb_ckt|Selector7  ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |top|comb_ckt_generator:comb_ckt|Selector5  ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |top|comb_ckt_generator:comb_ckt|Selector3  ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |top|comb_ckt_generator:comb_ckt|Selector1  ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |top|comb_ckt_generator:comb_ckt|Selector6  ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |top|comb_ckt_generator:comb_ckt|Selector4  ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |top|comb_ckt_generator:comb_ckt|Selector2  ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |top|comb_ckt_generator:comb_ckt|Selector0  ;
 ; 11:1               ; 5 bits    ; 35 LEs        ; 30 LEs               ; 5 LEs                  ; No         ; |top|comb_ckt_generator:comb_ckt|posicao    ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |top|comb_ckt_generator:comb_ckt|posicao    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
 
 
@@ -355,6 +341,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+-------+-------------------------------------------------+
 ; Player         ; 1     ; Signed Integer                                  ;
 ; CPU            ; 2     ; Signed Integer                                  ;
+; facil          ; 0     ; Signed Integer                                  ;
+; medio          ; 1     ; Signed Integer                                  ;
+; dificil        ; 2     ; Signed Integer                                  ;
 +----------------+-------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -822,10 +811,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Jul 16 23:38:34 2019
+    Info: Processing started: Wed Jul 17 14:09:39 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga_core -c vga_core
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Warning (10090): Verilog HDL syntax warning at comb_ckt_generator.v(395): extra block comment delimiter characters /* within block comment File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 395
 Info (12021): Found 1 design units, including 1 entities, in source file /documentos/ufg/11º período/sistemas embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v
     Info (12023): Found entity 1: comb_ckt_generator File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file /documentos/ufg/11º período/sistemas embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/vga_controller.v
@@ -843,36 +833,37 @@ Warning (10858): Verilog HDL warning at top.v(59): object coordenadas used but n
 Warning (10030): Net "coordenadas.0010" at top.v(59) has no driver or initial value, using a default initial value '0' File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/top.v Line: 59
 Info (12128): Elaborating entity "comb_ckt_generator" for hierarchy "comb_ckt_generator:comb_ckt" File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/top.v Line: 92
 Warning (10858): Verilog HDL warning at comb_ckt_generator.v(53): object posicoesJogadas used but never assigned File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 53
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(120): truncated value with size 32 to match size of target (2) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 120
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(158): truncated value with size 32 to match size of target (2) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 158
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(159): truncated value with size 32 to match size of target (2) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 159
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(125): truncated value with size 32 to match size of target (2) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 125
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(163): truncated value with size 32 to match size of target (2) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 163
 Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(164): truncated value with size 32 to match size of target (2) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 164
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(165): truncated value with size 32 to match size of target (2) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 165
-Info (10264): Verilog HDL Case Statement information at comb_ckt_generator.v(155): all case item expressions in this case statement are onehot File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 155
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(208): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 208
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(209): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 209
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(210): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 210
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(215): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 215
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(216): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 216
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(217): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 217
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(227): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 227
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(234): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 234
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(245): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 245
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(252): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 252
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(261): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 261
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(267): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 267
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(276): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 276
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(282): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 282
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(291): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 291
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(297): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 297
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(306): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 306
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(312): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 312
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(321): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 321
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(327): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 327
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(336): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 336
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(342): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 342
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(351): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 351
-Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(357): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 357
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(172): truncated value with size 32 to match size of target (10) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 172
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(178): truncated value with size 32 to match size of target (2) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 178
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(179): truncated value with size 32 to match size of target (2) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 179
+Info (10264): Verilog HDL Case Statement information at comb_ckt_generator.v(160): all case item expressions in this case statement are onehot File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 160
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(222): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 222
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(223): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 223
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(224): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 224
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(229): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 229
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(230): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 230
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(231): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 231
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(241): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 241
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(248): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 248
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(259): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 259
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(266): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 266
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(275): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 275
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(281): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 281
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(290): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 290
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(296): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 296
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(305): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 305
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(311): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 311
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(320): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 320
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(326): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 326
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(335): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 335
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(341): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 341
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(350): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 350
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(356): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 356
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(365): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 365
+Warning (10230): Verilog HDL assignment warning at comb_ckt_generator.v(371): truncated value with size 32 to match size of target (4) File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 371
 Warning (10030): Net "posicoesJogadas[8..0]" at comb_ckt_generator.v(53) has no driver or initial value, using a default initial value '0' File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/comb_ckt_generator.v Line: 53
 Info (12128): Elaborating entity "pll" for hierarchy "pll:vgapll_inst" File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/hdl/top.v Line: 122
 Info (12128): Elaborating entity "altpll" for hierarchy "pll:vgapll_inst|altpll:altpll_component" File: D:/Documentos/UFG/11º Período/Sistemas Embarcados/tictactoe-fpga-feature-game-rule/vga/ip/pll.v Line: 90
@@ -992,11 +983,11 @@ Info (21057): Implemented 197 device resources after synthesis - the final resou
     Info (21059): Implemented 72 output pins
     Info (21061): Implemented 109 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 81 warnings
-    Info: Peak virtual memory: 4771 megabytes
-    Info: Processing ended: Tue Jul 16 23:38:56 2019
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:41
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 83 warnings
+    Info: Peak virtual memory: 4770 megabytes
+    Info: Processing ended: Wed Jul 17 14:09:54 2019
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:25
 
 
 +------------------------------------------+
