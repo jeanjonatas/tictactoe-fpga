@@ -1,10 +1,12 @@
-module game(posicao, clock, reset, vencedor);
+module game(posicoes, posicao, clock, reset, vencedor, matrizJogo);
 input [0:8]posicao;
 input clock, reset;
+input [9:0] posicoes;
+
 output reg[0:2] vencedor;
 
 reg[1:0] estadoAtual;
-reg [1:0] matrizJogo [0:8];
+output reg [1:0] matrizJogo [0:8];
 
 parameter Player = 0, CPU = 1;
 integer count = 1;

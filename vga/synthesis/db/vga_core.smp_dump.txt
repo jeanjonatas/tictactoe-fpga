@@ -1,0 +1,6 @@
+
+State Machine - |top|cpu:comb_4|modo
+Name modo.facil modo.dificil modo.medio 
+modo.facil 0 0 0 
+modo.medio 1 0 1 
+modo.dificil 1 1 0 
